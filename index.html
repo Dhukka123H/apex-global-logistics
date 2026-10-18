@@ -3,76 +3,1061 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Global Logistics | Enterprise Solutions</title>
+
+    <title>Apex Global Logistics | Corporate Sandbox</title>
+
+    <meta name="description"
+          content="Apex Global Logistics - A fictional corporate website for an educational OSINT and cybersecurity demonstration.">
+
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
-        header { background-color: #1a252f; color: white; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: #3498db; }
-        nav a { color: white; margin-left: 20px; text-decoration: none; }
-        .hero { background: linear-gradient(rgba(26,37,47,0.8), rgba(26,37,47,0.8)), url('https://unsplash.com') no-repeat center center/cover; height: 300px; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
-        .card { background: #f8f9fa; border: 1px solid #e9ecef; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
-        .team-member { display: flex; align-items: center; margin-bottom: 15px; }
-        .team-img { width: 50px; height: 50px; border-radius: 50%; background: #ccc; margin-right: 15px; }
-        footer { background: #1a252f; color: #888; text-align: center; padding: 20px; margin-top: 40px; font-size: 0.9rem; }
+        :root {
+            --navy: #142536;
+            --navy-light: #203c55;
+            --blue: #2589d8;
+            --blue-light: #eaf4fc;
+            --green: #1c9b76;
+            --text: #293747;
+            --muted: #667789;
+            --background: #f4f7fb;
+            --white: #ffffff;
+            --border: #e1e8ef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: var(--text);
+            background: var(--background);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        /* Educational project notice */
+        .notice {
+            background: #fff4d9;
+            color: #72500a;
+            text-align: center;
+            padding: 9px 15px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        header {
+            background: var(--navy);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 15px #00000020;
+        }
+
+        .navbar {
+            min-height: 76px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 21px;
+            font-weight: 750;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: #54b5ff;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 21px;
+        }
+
+        nav a {
+            color: #e5edf5;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #54b5ff;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 440px;
+            display: flex;
+            align-items: center;
+            color: white;
+            background:
+                linear-gradient(110deg, #102337f5, #173d5de8),
+                radial-gradient(circle at 80% 25%, #2589d850, transparent 45%);
+            padding: 70px 0;
+        }
+
+        .hero-content {
+            max-width: 790px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            background: #ffffff16;
+            border: 1px solid #ffffff35;
+            padding: 7px 14px;
+            border-radius: 30px;
+            color: #a9d9ff;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 5vw, 56px);
+            line-height: 1.15;
+            margin-bottom: 22px;
+            letter-spacing: -1.2px;
+        }
+
+        .hero h1 span {
+            color: #65bcff;
+        }
+
+        .hero p {
+            color: #d5e1ec;
+            font-size: 17px;
+            max-width: 680px;
+            margin-bottom: 30px;
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 21px;
+            border-radius: 7px;
+            font-weight: 650;
+            font-size: 14px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1675bd;
+        }
+
+        .btn-outline {
+            color: white;
+            border: 1px solid #ffffff70;
+        }
+
+        .btn-outline:hover {
+            background: #ffffff12;
+        }
+
+        /* General sections */
+        section.content-section {
+            padding: 76px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 42px;
+        }
+
+        .section-heading .label {
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            color: var(--navy);
+            font-size: clamp(27px, 4vw, 36px);
+            line-height: 1.25;
+            margin: 10px 0 14px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about-copy h3 {
+            font-size: 25px;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .about-copy p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .about-panel {
+            padding: 30px;
+            border-radius: 14px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            box-shadow: 0 12px 35px #18324b09;
+        }
+
+        .stat {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border-bottom: none;
+        }
+
+        .stat-icon {
+            width: 43px;
+            height: 43px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            background: var(--blue-light);
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        .stat h4 {
+            color: var(--navy);
+            margin-bottom: 3px;
+        }
+
+        .stat p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* Services */
+        .services-section {
+            background: white;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            padding: 27px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px #18324b12;
+        }
+
+        .service-icon {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: var(--navy);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* Leadership */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .leader-card {
+            display: flex;
+            align-items: center;
+            gap: 19px;
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: white;
+        }
+
+        .avatar {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            background: var(--navy-light);
+            color: white;
+            font-size: 22px;
+            font-weight: 750;
+        }
+
+        .leader-card h3 {
+            color: var(--navy);
+            font-size: 18px;
+        }
+
+        .leader-role {
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 650;
+        }
+
+        .synthetic {
+            color: var(--muted);
+            font-size: 12px;
+            overflow-wrap: anywhere;
+        }
+
+        /* Organizational chart */
+        .chart-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            text-align: center;
+            box-shadow: 0 10px 30px #18324b08;
+        }
+
+        .chart-card img {
+            display: block;
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            margin: 0 auto 18px;
+            border-radius: 8px;
+        }
+
+        .chart-card p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* Resources */
+        .resources-section {
+            background: white;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .resource-card {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #fbfdff;
+        }
+
+        .resource-card h3 {
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .resource-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .resource-card .btn {
+            margin-top: 2px;
+        }
+
+        .resource-note {
+            margin-top: 25px;
+            padding: 16px 20px;
+            border-left: 4px solid var(--green);
+            border-radius: 5px;
+            background: #eaf8f2;
+            color: #255b48;
+            font-size: 13px;
+        }
+
+        /* OSINT demonstration */
+        .osint-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .osint-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 23px;
+        }
+
+        .osint-card h3 {
+            color: var(--navy);
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .osint-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-top: 13px;
+            background: var(--blue-light);
+            color: #1768a5;
+            font-size: 11px;
+            font-weight: 750;
+            padding: 5px 9px;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background: #101f2e;
+            color: #c4d0dc;
+            padding: 35px 0 20px;
+        }
+
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding-bottom: 25px;
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #aab8c6;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #ffffff20;
+            padding-top: 18px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 800px) {
+            .navbar {
+                padding: 15px 0;
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px 18px;
+            }
+
+            .about-grid,
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leadership-grid,
+            .resource-grid,
+            .osint-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 390px;
+            }
+
+            section.content-section {
+                padding: 55px 0;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .logo {
+                font-size: 18px;
+            }
+
+            .leader-card {
+                padding: 18px;
+            }
+
+            .avatar {
+                width: 53px;
+                height: 53px;
+            }
+
+            .chart-card {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <div class="logo">⚓ Apex Global Logistics</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#team">Leadership</a>
-            <a href="assets/mock_invoice.pdf" download>Vendor Portal</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Securing Global Supply Chains with Absolute Precision</h1>
-        <p>Connecting continents, optimizing routes, and managing high-value distributions globally.</p>
-    </section>
-
-    <div class="container">
-        <div class="grid">
-            <main id="about">
-                <h2>Corporate Profile</h2>
-                <p>Founded in 2018, Apex Global Logistics (AGL) operates fleet networks across North America, Europe, and Asia. We specialize in cold-chain logistics, hazardous materials transport, and corporate clearing architectures.</p>
-                
-                <div class="card">
-                    <h3>Recent Corporate Announcements</h3>
-                    <p><strong>Oct 2026:</strong> AGL is proud to announce our upcoming title sponsorship for the <em>Annual Regional Charity Golf Invitational</em> hitting off next month! Our executive board will be in full attendance to support the Children's Health Initiative.</p>
-                </div>
-            </main>
-
-            <aside id="team">
-                <h3>Executive Leadership</h3>
-                <div class="card">
-                    <div class="team-member">
-                        <div class="team-img" style="background-color: #3498db;"></div>
-                        <div>
-                            <strong>Jane Smith</strong><br>
-                            <small>Chief Executive Officer</small><br>
-                            <small style="color:#666;">janesmith@apex-global.local</small>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <div class="team-img" style="background-color: #2ecc71;"></div>
-                        <div>
-                            <strong>Robert Vance</strong><br>
-                            <small>Chief Financial Officer</small><br>
-                            <small style="color:#666;">robert.vance@apex-global.local</small>
-                        </div>
-                    </div>
-                    <p style="font-size:0.8rem; color:#777;">Internal Directory administrative contact syntax: <code>admin@apex-global.local</code></p>
-                </div>
-            </aside>
-        </div>
+    <!-- Educational disclaimer -->
+    <div class="notice">
+        EDUCATIONAL SANDBOX — Fictional organization and synthetic data.
+        No real corporate affiliation.
     </div>
 
+    <!-- Navigation -->
+    <header>
+        <div class="container navbar">
+            <a href="#home" class="logo">⚓ Apex <span>Global Logistics</span></a>
+
+            <nav aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#leadership">Leadership</a>
+                <a href="#organization">Organization</a>
+                <a href="#resources">Resources</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="eyebrow">FICTIONAL CORPORATE SANDBOX</span>
+
+                    <h1>
+                        Connecting Global Trade with
+                        <span>Precision and Purpose.</span>
+                    </h1>
+
+                    <p>
+                        Explore a simulated logistics enterprise created to
+                        demonstrate corporate web design, publicly visible
+                        information, document metadata, and cybersecurity
+                        awareness in a controlled academic environment.
+                    </p>
+
+                    <div class="button-row">
+                        <a href="#about" class="btn btn-primary">
+                            Explore Our Company
+                        </a>
+
+                        <a href="#resources" class="btn btn-outline">
+                            View Demonstration Files
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us -->
+        <section class="content-section" id="about">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="label">Who We Are</span>
+                    <h2>About Apex Global Logistics</h2>
+                    <p>
+                        A fictional enterprise built for an academic
+                        demonstration of OSINT concepts and information
+                        exposure risks.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-copy">
+                        <h3>Moving Information. Connecting Possibilities.</h3>
+
+                        <p>
+                            Apex Global Logistics (AGL) is a fictional
+                            logistics company concept. Its sample website
+                            illustrates how an organization might present
+                            its corporate profile, services, leadership
+                            structure, and downloadable business documents.
+                        </p>
+
+                        <p>
+                            This project demonstrates how publicly accessible
+                            pages and document properties can reveal
+                            organizational details. The names, company
+                            information, contact addresses, and business
+                            scenarios displayed here are synthetic and are
+                            not intended to represent real individuals or
+                            an operating business.
+                        </p>
+
+                        <p>
+                            The project supports cybersecurity education by
+                            helping students understand information exposure,
+                            document metadata, reconnaissance techniques,
+                            and practical defensive controls.
+                        </p>
+                    </div>
+
+                    <div class="about-panel">
+                        <div class="stat">
+                            <div class="stat-icon">🌐</div>
+                            <div>
+                                <h4>Global Logistics Concept</h4>
+                                <p>
+                                    A simulated international logistics
+                                    organization.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-icon">🔎</div>
+                            <div>
+                                <h4>OSINT Demonstration</h4>
+                                <p>
+                                    Explore public-facing information and
+                                    document metadata.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-icon">🛡️</div>
+                            <div>
+                                <h4>Security Awareness</h4>
+                                <p>
+                                    Understand data exposure and
+                                    risk-reduction practices.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="content-section services-section" id="services">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="label">Our Capabilities</span>
+                    <h2>Illustrative Logistics Services</h2>
+                    <p>
+                        Sample service descriptions for the fictional
+                        organization represented in this project.
+                    </p>
+                </div>
+
+                <div class="service-grid">
+                    <article class="service-card">
+                        <div class="service-icon">🚢</div>
+                        <h3>Freight Management</h3>
+                        <p>
+                            A demonstration of coordinated freight planning,
+                            shipment scheduling, and logistics operations.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">❄️</div>
+                        <h3>Cold-Chain Logistics</h3>
+                        <p>
+                            A fictional service illustrating temperature-aware
+                            transportation and supply-chain monitoring.
+                        </p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon">📦</div>
+                        <h3>Supply-Chain Solutions</h3>
+                        <p>
+                            An example of inventory coordination, distribution
+                            planning, and operational visibility.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Corporate announcement -->
+        <section class="content-section" id="announcements">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="label">Company Updates</span>
+                    <h2>Corporate Announcements</h2>
+                    <p>
+                        Sample announcements used to populate the fictional
+                        corporate website.
+                    </p>
+                </div>
+
+                <div class="about-panel">
+                    <span class="tag">SYNTHETIC EXAMPLE</span>
+
+                    <h3 style="margin-top: 14px; color: #142536;">
+                        Corporate Sustainability Initiative
+                    </h3>
+
+                    <p style="margin-top: 10px; color: #667789;">
+                        The fictional AGL organization is exploring ways to
+                        improve transportation efficiency, reduce unnecessary
+                        packaging, and encourage responsible supply-chain
+                        practices. This announcement is illustrative and
+                        does not describe a real corporate program.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership -->
+        <section class="content-section" id="leadership">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="label">Our People</span>
+                    <h2>Executive Leadership</h2>
+                    <p>
+                        Synthetic identities used only to demonstrate how
+                        organizational information might appear on a
+                        corporate website.
+                    </p>
+                </div>
+
+                <div class="leadership-grid">
+                    <article class="leader-card">
+                        <div class="avatar">JS</div>
+                        <div>
+                            <h3>Jane Smith</h3>
+                            <div class="leader-role">
+                                Chief Executive Officer
+                            </div>
+                            <div class="synthetic">
+                                janesmith@apex-global.local
+                            </div>
+                            <div class="synthetic">
+                                Fictional identity
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="leader-card">
+                        <div class="avatar"
+                             style="background: #187b68;">RV</div>
+                        <div>
+                            <h3>Robert Vance</h3>
+                            <div class="leader-role">
+                                Chief Financial Officer
+                            </div>
+                            <div class="synthetic">
+                                robert.vance@apex-global.local
+                            </div>
+                            <div class="synthetic">
+                                Fictional identity
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="leader-card">
+                        <div class="avatar"
+                             style="background: #7855a5;">MC</div>
+                        <div>
+                            <h3>Michael Carter</h3>
+                            <div class="leader-role">
+                                Operations Director
+                            </div>
+                            <div class="synthetic">
+                                michael.carter@apex-global.local
+                            </div>
+                            <div class="synthetic">
+                                Fictional identity
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="leader-card">
+                        <div class="avatar"
+                             style="background: #b06b32;">AD</div>
+                        <div>
+                            <h3>Alex Davis</h3>
+                            <div class="leader-role">
+                                IT Administrator
+                            </div>
+                            <div class="synthetic">
+                                admin@apex-global.local
+                            </div>
+                            <div class="synthetic">
+                                Fictional identity
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organizational Chart -->
+        <section class="content-section" id="organization">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="label">Company Structure</span>
+                    <h2>Corporate Organizational Chart</h2>
+                    <p>
+                        A visual representation of the fictional reporting
+                        structure used in the demonstration.
+                    </p>
+                </div>
+
+                <div class="chart-card">
+                    <!-- Image path is relative to index.html -->
+                    <img
+                        src="assets/corporate_chart.png"
+                        alt="Fictional Apex Global Logistics organizational chart showing the CEO, CFO, and administrator"
+                        loading="lazy"
+                        onerror="this.style.display='none'; document.getElementById('chart-fallback').style.display='block';"
+                    >
+
+                    <div id="chart-fallback" style="display:none; padding:20px;">
+                        <p>
+                            The organizational chart image could not be
+                            loaded. Verify that
+                            <code>assets/corporate_chart.png</code>
+                            exists in your repository.
+                        </p>
+                    </div>
+
+                    <p>
+                        File: assets/corporate_chart.png
+                        &nbsp; | &nbsp;
+                        Synthetic organizational data
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demonstration resources -->
+        <section class="content-section resources-section" id="resources">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="label">Project Resources</span>
+                    <h2>Document &amp; Image Demonstrations</h2>
+                    <p>
+                        Download the synthetic project assets and examine
+                        them as part of your authorized OSINT lab.
+                    </p>
+                </div>
+
+                <div class="resource-grid">
+                    <article class="resource-card">
+                        <div class="service-icon">📄</div>
+
+                        <h3>Mock Vendor Invoice</h3>
+
+                        <p>
+                            A sample PDF containing fictional invoice
+                            information and demonstration metadata.
+                            Use a local metadata inspection tool to examine
+                            its document properties.
+                        </p>
+
+                        <a
+                            class="btn btn-primary"
+                            href="assets/mock_invoice.pdf"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            View Sample PDF
+                        </a>
+
+                        <a
+                            class="btn"
+                            style="color: #1768a5;"
+                            href="assets/mock_invoice.pdf"
+                            download
+                        >
+                            Download PDF
+                        </a>
+                    </article>
+
+                    <article class="resource-card">
+                        <div class="service-icon">🗂️</div>
+
+                        <h3>Corporate Organization Chart</h3>
+
+                        <p>
+                            A PNG image representing the fictional reporting
+                            structure. Use it to discuss publicly exposed
+                            organizational information and image metadata.
+                        </p>
+
+                        <a
+                            class="btn btn-primary"
+                            href="assets/corporate_chart.png"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            View Chart
+                        </a>
+
+                        <a
+                            class="btn"
+                            style="color: #1768a5;"
+                            href="assets/corporate_chart.png"
+                            download
+                        >
+                            Download Image
+                        </a>
+                    </article>
+                </div>
+
+                <div class="resource-note">
+                    <strong>Lab safety:</strong>
+                    All sample identities and contact addresses are synthetic.
+                    The .local addresses are not public email inboxes.
+                    Do not send messages to real people or use these files
+                    to impersonate a real organization. Conduct testing
+                    only within your authorized educational environment.
+                </div>
+            </div>
+        </section>
+
+        <!-- OSINT learning section -->
+        <section class="content-section" id="security">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="label">Cybersecurity Lab</span>
+                    <h2>OSINT &amp; Information Exposure</h2>
+                    <p>
+                        Use this fictional site to understand common
+                        information-discovery methods and corresponding
+                        defensive measures.
+                    </p>
+                </div>
+
+                <div class="osint-grid">
+                    <article class="osint-card">
+                        <h3>01. Public Information Discovery</h3>
+                        <p>
+                            Review the site's publicly accessible pages and
+                            document which fictional company details are
+                            visible without authentication.
+                        </p>
+                        <span class="tag">Web Reconnaissance</span>
+                    </article>
+
+                    <article class="osint-card">
+                        <h3>02. PDF Metadata Analysis</h3>
+                        <p>
+                            Inspect the sample invoice's author, title,
+                            subject, and other metadata using ExifTool
+                            or another PDF metadata viewer.
+                        </p>
+                        <span class="tag">Document Forensics</span>
+                    </article>
+
+                    <article class="osint-card">
+                        <h3>03. Organizational Mapping</h3>
+                        <p>
+                            Compare the leadership section with the sample
+                            chart to understand how organizational roles
+                            can be inferred from published information.
+                        </p>
+                        <span class="tag">Visual OSINT</span>
+                    </article>
+
+                    <article class="osint-card">
+                        <h3>04. Defensive Recommendations</h3>
+                        <p>
+                            Discuss metadata sanitization, minimum
+                            information disclosure, multi-factor
+                            authentication, and phishing-awareness training.
+                        </p>
+                        <span class="tag">Security Awareness</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Apex Global Logistics Inc. All Rights Reserved. For administrative queries contact admin@apex-global.local</p>
+        <div class="container">
+            <div class="footer-main">
+                <div>
+                    <h3>⚓ Apex Global Logistics</h3>
+                    <p>
+                        A fictional corporate website for cybersecurity
+                        education and academic demonstration.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Project Information</h3>
+                    <p>Topic: OSINT and document metadata exposure</p>
+                    <p>Environment: GitHub Pages static website</p>
+                    <p>Data: Synthetic demonstration data</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; 2026 Apex Global Logistics — Fictional Educational
+                Project. No real corporate affiliation.
+            </div>
+        </div>
     </footer>
 
 </body>
